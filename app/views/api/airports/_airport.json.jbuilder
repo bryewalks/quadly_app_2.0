@@ -1,0 +1,10 @@
+json.id airport.id
+json.name airport.name
+json.city airport.city
+json.state airport.state
+json.zipcode airport.zipcode
+json.country airport.country
+json.address airport.address
+json.latitude airport.latitude
+json.longitude airport.longitude
+json.size airport.size
