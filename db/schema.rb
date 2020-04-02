@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 2020_04_01_201430) do
 
   create_table "airports", force: :cascade do |t|
     t.string "name"
-    t.string "address"
     t.string "city"
     t.string "state"
     t.string "country"
-    t.string "zipcode"
     t.string "size"
+    t.string "icao"
+    t.string "iata"
     t.decimal "latitude", precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
     t.datetime "created_at", precision: 6, null: false

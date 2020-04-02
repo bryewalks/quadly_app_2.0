@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 6'
 gem 'jbuilder', '~> 2.7'
 gem 'simple_jwt_auth'
 gem 'geocoder'
+gem 'seed_dump'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
