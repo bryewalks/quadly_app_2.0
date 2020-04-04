@@ -1,3 +1,4 @@
+json.id location.id
 json.name location.name
 json.address location.address
 json.latitude location.latitude

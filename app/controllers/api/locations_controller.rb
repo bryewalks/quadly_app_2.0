@@ -7,7 +7,7 @@ class Api::LocationsController < ApplicationController
   
   def create
     @location = Location.new(location_params)
-    if @location.save && @location.determine_status
+    if @location.save
       render 'show.json.jbuilder'
     else
       render json: {errors: @location.errors.full_messages},status: :unprocessable_entity
