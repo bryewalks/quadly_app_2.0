@@ -6,5 +6,6 @@ Rails.application.routes.draw do
         get :search
       end
     end
+    get 'weather' => "weathers#current_weather"
   end
 end
