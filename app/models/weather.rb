@@ -1,18 +1,14 @@
 class Weather
   attr_accessor :wind_speed, :temperature, :visibility_miles, :max_gust_speed, :chance_of_precipitation, :cloud_cover, :good_to_fly
   
-  def initialize(latitude, longitude)
-    response = HTTP.get("https://api.darksky.net/forecast/#{ ENV['DS_API_KEY'] }/#{ latitude },#{ longitude }")
-    if response.code === 200
-      response = response.parse['currently']
-      @wind_speed              = response['windSpeed']
-      @temperature             = response['temperature']
-      @visibility_miles        = response['visibility']
-      @max_gust_speed          = response['windGust']
-      @chance_of_precipitation = response['precipProbability']
-      @cloud_cover             = response['cloudCover']
-      set_good_to_fly
-    end
+  def initialize(input_options)
+    @wind_speed              = input_options[:wind_speed]
+    @temperature             = input_options[:temperature]
+    @visibility_miles        = input_options[:visibility_miles]
+    @max_gust_speed          = input_options[:max_gust_speed]
+    @chance_of_precipitation = input_options[:chance_of_precipitation]
+    @cloud_cover             = input_options[:cloud_cover]
+    set_good_to_fly
   end
 
   def check_wind
