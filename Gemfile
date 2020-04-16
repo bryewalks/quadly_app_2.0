@@ -13,7 +13,7 @@ gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-gem 'simple_jwt_auth'
+gem 'simple_jwt_auth', '~> 0.1.4'
 gem 'geocoder'
 gem 'seed_dump'
 gem 'figaro'
