@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :locations
     resources :airports, only: [:index, :show] do
       collection do
+        get 'status' => "airports#status"
         get :search
       end
     end
