@@ -9,6 +9,24 @@ class Api::AirportsController < ApplicationController
     @airport = Airport.find(params[:id])
     render 'show.json.jbuilder'
   end
+
+  def status
+    search_distance  = 5
+    search_latitude  = params[:latitude]
+    search_longitude = params[:longitude]
+
+    nearby_airports = Airport.near([search_latitude, search_longitude], search_distance)
+
+    status = 'flight zone'
+    if nearby_airports.where(size: 'large').any?
+      status = 'no flight zone'
+    elsif nearby_airports.where.not(size: 'large').any?
+      status = 'requires authorization'
+    end
+
+    render json: {status: status}
+  end
+
   #TODO: refactor search
   def search
     search_name      = params[:name]
